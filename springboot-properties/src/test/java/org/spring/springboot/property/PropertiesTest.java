@@ -6,7 +6,9 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -26,14 +28,21 @@ public class PropertiesTest {
     @Autowired
     private HomeProperties homeProperties;
 
+    @Autowired
+    private AddressProperties addressProperties;
+
     @Test
     public void getHomeProperties() {
-        LOGGER.info("\n\n" + homeProperties.toString() + "\n");
+        LOGGER.info("\n\n test " + homeProperties.toString() + "\n");
     }
 
     @Test
     public void randomTestUser() {
-        LOGGER.info("\n\n" + userProperties.toString() + "\n");
+        LOGGER.info("\n\n test" + userProperties.toString() + "\n");
+    }
+    @Test
+    public void getAddressTest(){
+        LOGGER.info("\n\n test" + addressProperties.toString() + "\n" );
     }
 
 }
